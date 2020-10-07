@@ -22,7 +22,7 @@ RUN apt-get update \
     && yes '' | pecl install --nodeps mcrypt-snapshot \
     && echo 'extension=mcrypt.so' > /usr/local/etc/php/conf.d/mcrypt.ini
 
-RUN wget https://download.libsodium.org/libsodium/releases/libsodium-1.0.18.tar.gz \
+RUN curl -o libsodium-1.0.18.tar.gz https://download.libsodium.org/libsodium/releases/libsodium-1.0.18.tar.gz \
         && tar xfvz libsodium-1.0.18.tar.gz \
         && cd libsodium-1.0.18 \
         && ./configure \
