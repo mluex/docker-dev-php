@@ -1,6 +1,6 @@
 FROM php:7.3.9-fpm
 
-RUN requirements="libmcrypt-dev libmcrypt4 libcurl3-dev libfreetype6 libfreetype6-dev libjpeg62-turbo-dev libpng-dev libxslt1-dev vim curl debconf git apt-transport-https apt-utils build-essential locales acl mailutils wget nodejs libzip-dev zip unzip gnupg gnupg1 gnupg2 zlib1g-dev libicu-dev sudo nano msmtp" \
+RUN requirements="libmcrypt-dev libmcrypt4 libcurl3-dev libfreetype6 libfreetype6-dev libjpeg62-turbo-dev libpng-dev libxslt1-dev vim curl debconf git apt-transport-https apt-utils build-essential locales acl mailutils wget nodejs libzip-dev zip unzip gnupg gnupg1 gnupg2 zlib1g-dev libicu-dev sudo nano msmtp mariadb-client" \
     && apt-get update \
     && apt-get install -y $requirements \
     && rm -rf /var/lib/apt/lists/* \
